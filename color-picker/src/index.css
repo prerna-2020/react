@@ -1,0 +1,56 @@
+/* color picker style */
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+.selectedBlock{
+    margin: 20px auto;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 1px solid grey;
+    box-shadow: 0 0 5px #646464;
+    text-align: center;
+    border-radius: 6px;
+}
+#selected{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#selected p{
+    margin: 8px 0;
+    font-size: 16px;
+    color: #222222;
+}
+#selected p:first-child{
+    font-size: 18px;
+}
+.inputBlock{
+
+}
+.inputBlock label{
+    display: block;
+    margin-bottom: 10px;
+
+}
+.inputBlock input{
+    box-shadow: 0 0 5px #646464;
+}
+.inputBlk input, select {
+    width:400px;
+    display: block;
+    margin:5px 0px 10px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    border: 1px solid #646464;
+
+}
