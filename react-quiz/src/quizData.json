@@ -1,0 +1,105 @@
+{
+  "quizTitle": "React Fundamentals Quiz",
+  "questions": [
+    {
+      "question": "What is JSX?",
+      "options": [
+        "A JavaScript syntax extension",
+        "A CSS preprocessor",
+        "A database query language",
+        "A testing framework"
+      ],
+      "correctAnswers": 0,
+      "id": 1
+    },
+    {
+      "question": "Which hook is used to manage state in a functional component?",
+      "options": ["useEffect", "useState", "useContext", "useReducer"],
+      "correctAnswers": 1,
+      "id": 2
+    },
+    {
+      "question": "What does the useEffect hook do?",
+      "options": [
+        "Manages component state",
+        "Handles routing",
+        "Performs side effects",
+        "Creates context"
+      ],
+      "correctAnswers": 2,
+      "id": 3
+    },
+    {
+      "question": "Which method is used to render React components to the DOM?",
+      "options": [
+        "React.createElement()",
+        "ReactDOM.render())",
+        "ReactDOM.createRoot()",
+        "React.render()"
+      ],
+      "correctAnswers": 1,
+      "id": 4
+    },
+    {
+      "question": "What is the virtual DOM?",
+      "options": [
+        "A copy of the real DOM for efficient updates",
+        "A server-side rendering engine",
+        "A styling engine",
+        "A database used by React"
+      ],
+      "correctAnswers": 0,
+      "id": 5
+    },
+    {
+      "question": "Which of the following is true about props?",
+      "options": [
+        "Props are mutable",
+        "Props are used to store local state",
+        "Props are passed from parent to child",
+        "Props can only be used in class components"
+      ],
+      "correctAnswers": 2,
+      "id": 6
+    },
+    {
+      "question": "What is the purpose of keys in React lists?",
+      "options": [
+        "To manage state",
+        "To bind events",
+        "To style items",
+        "To uniquely identify elements"
+      ],
+      "correctAnswers": 3,
+      "id": 7
+    },
+    {
+      "question": "Which hook is used to share state across components?",
+      "options": ["useRef", "useEffect", "useContext", "useState"],
+      "correctAnswers": 2,
+      "id": 8
+    },
+    {
+      "question": "What happens if useEffect has no dependency array?",
+      "options": [
+        "It runs only once",
+        "It never runs",
+        "It runs after every render",
+        "It runs only when props change"
+      ],
+      "correctAnswers": 2,
+      "id": 9
+    },
+    {
+      "question": "Which is NOT a lifecycle method in class components?",
+      "options": [
+        "componentDidMount",
+        "componentDidUpdate",
+        "useEffect",
+        "componentWillUnmount"
+      ],
+      "correctAnswers": 2,
+      "id": 10
+    }
+  ]
+}
