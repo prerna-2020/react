@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Dreamscape",
+    "artist": "Synthwave",
+    "src": "/audio/audio1.mp3",
+    "thumb": "/images/thumb.jpg",
+    "duration": "3:07",
+    "isLiked": false,
+    "isPlaying": false
+  },
+  {
+    "id": 2,
+    "title": "Ocean Breeze",
+    "artist": "Avalon Audio",
+    "src": "/audio/Avalon_Audio.mp3",
+    "thumb": "/images/thumb2.jpg",
+    "duration": "2:58",
+    "isLiked": false,
+    "isPlaying": false
+  },
+  {
+    "id": 3,
+    "title": "Midnight Drive",
+    "artist": "Neon Nights",
+    "src": "/audio/soft-background-audio-401914.mp3",
+    "thumb": "/images/thumb3.jpg",
+    "duration": "2:14",
+    "isLiked": false,
+    "isPlaying": false
+  },
+  {
+    "id": 4,
+    "title": "Sunset Vibes",
+    "artist": "Lo-Fi Collective",
+    "src": "/audio/soft-background-music-368633.mp3",
+    "thumb": "/images/thumb4.jpg",
+    "duration": "3:29",
+    "isLiked": false,
+    "isPlaying": false
+  },
+  {
+    "id": 5,
+    "title": "Corporate Music",
+    "artist": "Sigma Music",
+    "src": "/audio/corporate-background-music-401912.mp3",
+    "thumb": "/images/thumb5.jpg",
+    "duration": "2:00",
+    "isLiked": false,
+    "isPlaying": false
+  }
+]
