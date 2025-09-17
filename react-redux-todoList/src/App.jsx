@@ -13,11 +13,6 @@ function App() {
       localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  // const handleFilterChange = (val) => {
-  //   setCurrentFilter(val);
-  //   if(val)
-  // };
-
   return (
     <>
       <div className="w-full h-screen bg-gray-900 text-center">
@@ -78,7 +73,7 @@ function App() {
               )}
             </div>
           )}
-          {todos.length > 0 && (
+          {todos.length > 0 && ( //  Need to optimize
             <ul className="my-5">
               {todos.map((todo) => {
                 if (currentFilter === "All")
