@@ -39,10 +39,23 @@ export const toDoSlice = createSlice({
       });
       [...state.todos, updated];
     },
+    markUnmarkAll: (state, action) => {
+      const updated = state.todos.map((todo) => {
+        if (action.payload === "markAll") todo.isCompleted = true;
+        else todo.isCompleted = false;
+        return todo;
+      });
+      [...state.todos, updated];
+    },
   },
 });
 
-export const { addToDo, removeToDo, updateToDo, toggleIsComplete } =
-  toDoSlice.actions;
+export const {
+  addToDo,
+  removeToDo,
+  updateToDo,
+  toggleIsComplete,
+  markUnmarkAll,
+} = toDoSlice.actions;
 
 export default toDoSlice.reducer;

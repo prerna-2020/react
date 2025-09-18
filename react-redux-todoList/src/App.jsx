@@ -1,10 +1,12 @@
 import ToDoForm from "./todo/toDoForm";
 import ToDoItem from "./todo/toDoItem";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
+import { markUnmarkAll } from "./todo/toDoSlice";
 
 function App() {
   const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
   const [filters] = useState(["All", "Pending", "Completed"]);
   const [currentFilter, setCurrentFilter] = useState("All");
 
@@ -22,13 +24,26 @@ function App() {
         >
           ToDos
         </h1>
-        <div className="w-[650px] bg-white mx-auto rounded-2xl shadow-[2px 2px 5px black] shadow-white p-6">
+        <div className="w-full md:w-[650px] bg-white mx-auto md:rounded-2xl shadow-[2px 2px 5px black] shadow-white py-6 px-3 lg:p-6">
           <ToDoForm />
           {todos.length > 0 && (
-            <div className="flex items-center mt-3">
-              <p className="text-gray-600 text-xs italic text-left flex-1">
-                Mark All Completed
-              </p>
+            <div className="flex items-center mt-3 w-full justify-between">
+              <div>
+                <button
+                  type="button"
+                  className="py-1 px-1 md:px-4 border-[1px] md:border-2 border-orange-500  text-orange-500 italic text-xs text-center  mr-2 md:mr-4 font-semibold cursor-pointer"
+                  onClick={() => dispatch(markUnmarkAll("markAll"))}
+                >
+                  Mark All
+                </button>
+                <button
+                  type="button"
+                  className="py-1 px-1 md:px-4 border-[1px] md:border-2 border-orange-500 text-orange-500 italic text-xs text-center md:mr-4 font-semibold cursor-pointer"
+                  onClick={() => dispatch(markUnmarkAll("unmarkAll"))}
+                >
+                  Unmark All
+                </button>
+              </div>
               {filters && (
                 <ul className="list-none flex justify-end items-center">
                   {filters.map((item, index) => {
@@ -73,20 +88,21 @@ function App() {
               )}
             </div>
           )}
-          {todos.length > 0 && ( //  Need to optimize
-            <ul className="my-5">
-              {todos.map((todo) => {
-                if (currentFilter === "All")
+          {todos.length > 0 && (
+            <ul className="my-5 ml-auto">
+              {todos
+                .filter((todo) => {
+                  if (currentFilter === "All") return todo;
+                  if (currentFilter === "Pending") return !todo.isCompleted;
+                  if (currentFilter === "Completed") return todo.isCompleted;
+                })
+                .map((todo) => {
                   return <ToDoItem todo={todo} key={todo.id} />;
-                else if (currentFilter === "Pending") {
-                  if (todo.isCompleted === false)
-                    return <ToDoItem todo={todo} key={todo.id} />;
-                } else if (currentFilter === "Completed") {
-                  if (todo.isCompleted === true)
-                    return <ToDoItem todo={todo} key={todo.id} />;
-                }
-              })}
+                })}
             </ul>
+          )}
+          {todos.length == 0 && (
+            <p className="py-8 text-sm text-gray-400 "> No Task Added</p>
           )}
         </div>
       </div>

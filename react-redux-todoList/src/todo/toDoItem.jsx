@@ -14,11 +14,11 @@ function ToDoItem({ todo }) {
   };
 
   return (
-    <li className="flex justify-center items-center">
+    <li className="flex justify-center items-start">
       <input
         type="checkbox"
         name="todoComplete"
-        className="cursor-pointer mr-3"
+        className="cursor-pointer mr-3 mt-1"
         checked={todo.isCompleted}
         onChange={(e) =>
           dispatch(
@@ -27,10 +27,10 @@ function ToDoItem({ todo }) {
         }
       />
 
-      <input
+      {/* <input
         type="text"
         name="todoItem"
-        className={`flex-2 border-0 p-2 capitalize ${
+        className={`flex-2  basis-40 w-40 border-0 p-2 capitalize overflow-ellipsis wrap-break-word ${
           toggleInput ? "outline-1" : "outline-0"
         } ${
           todo.isCompleted ? "line-through text-gray-400" : "text-gray-800 "
@@ -38,7 +38,17 @@ function ToDoItem({ todo }) {
         value={currItem}
         readOnly={toggleInput ? false : true}
         onChange={(e) => setCurrItem(e.target.value)}
+      /> */}
+      <textarea
+        name="todoItem"
+        className={`flex-[2] border-0 p-2 pt-0 capitalize resize-none overflow-ellipsis ${
+          toggleInput ? "outline-1" : "outline-0"
+        } ${todo.isCompleted ? "line-through text-gray-400" : "text-gray-800"}`}
+        value={currItem}
+        readOnly={!toggleInput}
+        onChange={(e) => setCurrItem(e.target.value)}
       />
+
       {todo.isCompleted === false &&
         (toggleInput ? (
           <button
