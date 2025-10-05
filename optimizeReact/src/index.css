@@ -1,0 +1,30 @@
+.main {
+  width: 500px;
+  text-align: center;
+  margin: 40px auto;
+  position: relative;
+}
+input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+}
+.showResults {
+  position: absolute;
+  border: 1px solid #ddd;
+  width: 99.6%;
+  border-top: 0;
+}
+.showResults p {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  margin: 0;
+  text-align: left;
+  font-size: 13px;
+  color: rgb(70, 71, 70);
+}
+.showResults p:last-child {
+  border: 0px;
+}
